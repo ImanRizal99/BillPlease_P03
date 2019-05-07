@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Bill Please</string>
+    <string name="amount">How much?</string>
+    <string name="noPeople">Number of People</string>
 </resources>
