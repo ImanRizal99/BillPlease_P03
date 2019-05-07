@@ -59,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="38dp"
             android:layout_weight="1"
+            android:gravity="right"
             android:text="No of People :"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
@@ -100,14 +101,14 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/discountText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center"
-            android:hint="Discount"
-            android:inputType="textPersonName" />
+            android:hint="@string/Discount"
+            android:inputType="number" />
 
         <Space
             android:layout_width="wrap_content"
@@ -118,6 +119,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="26dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <Space
@@ -233,43 +235,62 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="43dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right"
-            android:text="Total amount : "
+            android:gravity="center"
+            android:text="Total Amount : "
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/totalText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="$0.00"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:text="Each Person Pays : "
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/eachText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="$0.00"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Space
@@ -278,23 +299,15 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/errorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="right"
-            android:text="Each person pays : "
-            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/eachText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="$0.00"
-            android:textSize="18sp" />
 
         <Space
             android:layout_width="wrap_content"
