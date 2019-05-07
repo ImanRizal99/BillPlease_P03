@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         totalOutput = findViewById(R.id.totalText);
         eachOutput = findViewById(R.id.eachText);
-//        errorOutput = findViewById(R.id.errorText);
+        errorOutput = findViewById(R.id.errorText);
 
         serviceInt = 0.0;
         gstInt = 0.0;
@@ -78,20 +78,29 @@ public class MainActivity extends AppCompatActivity {
                 Double totalDiscount = 0.0;
                 Double totalPayable = 0.0;
 
-                if (people >= 2) {
-                    if (serviceInt == 10.0 && gstInt == 7.0) {
-                        totalServiceCharge = amount / serviceInt;
-                        totalGST = amount / gstInt;
-                        total = amount + totalGST + totalServiceCharge;
-                    } else if (serviceInt == 10.0) {
-                        totalServiceCharge = amount / serviceInt;
-                        total = amount + totalServiceCharge;
-                    } else if (gstInt == 7.0) {
-                        totalGST = amount / gstInt;
-                        total = amount + totalGST + totalServiceCharge;
+                if (amount == 0.0 || people == 0) {
+                    errorOutput.setText("Please enter amount / pax");
+                }
+                else {
+                    if (people >= 2) {
+                        if (serviceInt == 10.0 && gstInt == 7.0) {
+                            totalServiceCharge = amount / serviceInt;
+                            totalGST = amount / gstInt;
+                            total = amount + totalGST + totalServiceCharge;
+                        } else if (serviceInt == 10.0) {
+                            totalServiceCharge = amount / serviceInt;
+                            total = amount + totalServiceCharge;
+                        } else if (gstInt == 7.0) {
+                            totalGST = amount / gstInt;
+                            total = amount + totalGST + totalServiceCharge;
+                        } else {
+                            total = amount;
+                        }
+                        errorOutput.setText("");
                     } else {
-                        total = amount;
+                        errorOutput.setText("Please enter pax more than 1");
                     }
+
                 }
 
                 if (discount >= 1) {
@@ -119,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
                 amountInput.setText("");
                 peopleInput.setText("");
                 discountInput.setText("");
+
+                errorOutput.setText("");
                 eachOutput.setText("$0.00");
                 totalOutput.setText("$0.00");
             }
